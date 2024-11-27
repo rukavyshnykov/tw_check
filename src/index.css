@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .custom-container {
+      @apply py-4 md:py-24 flex flex-col items-center;
+    }
+
+    .gray-bg {
+        @apply bg-gray-50 -mx-2 px-2 md:-mx-20 md:px-20
+    }
+}

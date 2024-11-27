@@ -7,7 +7,7 @@ import check3 from './assets/spot.png'
 import check4 from './assets/mail.png'
 import check5 from './assets/air.png'
 import check6 from './assets/uber.png'
-import feature from './assets/features.jpg'
+import feature from './assets/features-1-1.png'
 import feature2 from './assets/features-2.png'
 import svg1 from './assets/book.svg'
 import svg2 from './assets/people.svg'
@@ -33,8 +33,8 @@ function App() {
           <div className='flex gap-x-8 items-center relative w-full md:w-auto'>
             <img src={logo}/>
             <img src={burger} width={24} height={24} onClick={() => setOpen(!open)} className='ml-auto md:hidden'/>
-            <div className={`flex flex-col md:flex-row absolute md:static gap-y-8 md:gap-y-0 bg-purple-400 md:bg-transparent p-4 md:p-0 gap-x-8 items-center ${open ? '-right-2 -top-6' : '-right-80 -top-6'}`}>
-              <img src={burger} width={24} height={24} onClick={() => setOpen(!open)} className='ml-auto md:hidden'/>
+            <div className={`flex flex-col md:flex-row absolute md:static gap-y-8 md:gap-y-0 bg-purple-400 md:bg-transparent px-2 py-4 md:p-0 gap-x-8 items-center ${open ? '-right-2 -top-6' : '-right-80 -top-6'}`}>
+              <img src={burger} width={24} height={24} onClick={() => setOpen(!open)} className='ml-auto md:hidden mt-[14.5px]'/>
               <div className='text-base font-medium text-gray-900'>Company</div>
               <div className='text-base font-medium text-gray-900'>Marketplace</div>
               <div className='text-base font-medium text-gray-900'>Features</div>
@@ -65,26 +65,26 @@ function App() {
           </div>
         </div>
         <div className='pb-4 gap-4 md:gap-0 flex-wrap md:pb-24 flex justify-between'>
-          <div className='w-[calc(50%-8px)] md:w-auto'>
-            <img src={check1} className='w-full md:w-auto'/>
+          <div className='w-[calc(50%-8px)] md:w-auto flex items-center justify-center'>
+            <img src={check1} className='md:w-auto'/>
           </div>
-          <div className='w-[calc(50%-8px)] md:w-auto'>
-            <img src={check2} className='w-full md:w-auto'/>
+          <div className='w-[calc(50%-8px)] md:w-auto flex items-center justify-center'>
+            <img src={check2} className=' md:w-auto'/>
           </div>
-          <div className='w-[calc(50%-8px)] md:w-auto'>
-            <img src={check3} className='w-full md:w-auto'/>
+          <div className='w-[calc(50%-8px)] md:w-auto flex items-center justify-center'>
+            <img src={check3} className=' md:w-auto'/>
           </div>
-          <div className='w-[calc(50%-8px)] md:w-auto'>
-            <img src={check4} className='w-full md:w-auto'/>
+          <div className='w-[calc(50%-8px)] md:w-auto flex items-center justify-center'>
+            <img src={check4} className=' md:w-auto'/>
           </div>
-          <div className='w-[calc(50%-8px)] md:w-auto'>
-            <img src={check5} className='w-full md:w-auto'/>
+          <div className='w-[calc(50%-8px)] md:w-auto flex items-center justify-center'>
+            <img src={check5} className=' md:w-auto'/>
           </div>
-          <div className='w-[calc(50%-8px)] md:w-auto'>
-            <img src={check6} className='w-full md:w-auto'/>
+          <div className='w-[calc(50%-8px)] md:w-auto flex items-center justify-center'>
+            <img src={check6} className=' md:w-auto'/>
           </div>
         </div>
-        <div className='py-4 md:py-24 flex flex-col gap-y-4 md:gap-y-20 '>
+        <div className='py-4 md:py-24 flex flex-col gap-y-4 md:gap-y-20 gray-bg'>
           <div className='flex-col md:flex-row flex items-center gap-x-16'>
             <div className='flex flex-col'>
               <p className='leading-tight text-4xl font-extrabold text-gray-900 mb-4'>Work with tools you already use</p>
@@ -144,14 +144,14 @@ function App() {
             </div>
           </div>
         </div>
-        <div className='py-4 md:py-24 flex flex-col gap-y-6 items-center'>
+        <div className='custom-container gap-y-6 gray-bg'>
           <div>
             <img src={quote}/>
           </div>
           <p className='px-0 leading-relaxed text-2xl font-bold text-gray-900 text-center md:px-64'>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
           <p className='leading-tight text-base font-semibold text-gray-900'>Micheal Gough  / <span className='text-sm font-normal text-gray-500'>CEO at Google</span></p>
         </div>
-        <div className='py-4 md:py-24 flex flex-col items-center'>
+        <div className='custom-container'>
           <p className='leading-tight text-4xl font-extrabold'>Pay as you grow</p>
           <p className='px-0text-xl font-normal text-gray-500 text-center md:px-64'>Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
           <div className='flex-col md:flex-row flex gap-x-10 mt-12'>
@@ -209,7 +209,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className='py-4 md:py-24 flex flex-col items-center'>
+        <div className='custom-container gray-bg'>
           <p className='leading-tight text-4xl font-extrabold text-gray-900 mb-6'>Start your free trial today</p>
           <p className='text-xl font-normal text-gray-500 mb-6'>Try Flowbite Platform for 30 days. No credit card required.</p>
           <button className='py-3 px-5 bg-purple-600 rounded-lg text-base font-medium text-white'>Free trial for 30 days</button>
@@ -217,7 +217,7 @@ function App() {
         <div className='py-16'>
           <div className='flex flex-col gap-y-16 items-center'>
             <div className='flex-row flex flex-wrap md:flex-nowrap gap-y-8 md:gap-y-0 justify-between w-full'>
-              <div className='flex flex-col gap-y-4 items-start w-1/2 md:w-auto'>
+              <div className='flex flex-col gap-y-4 items-center w-1/2 md:w-auto md:items-start'>
                 <p className='uppercase text-sm font-semibold text-gray-900'>COMPANY</p>
                 <p className='text-base font-normal text-gray-500'>About</p>
                 <p className='text-base font-normal text-gray-500'>Premium</p>
@@ -225,21 +225,21 @@ function App() {
                 <p className='text-base font-normal text-gray-500'>Affiliate Program</p>
                 <p className='text-base font-normal text-gray-500'>Get Coupon</p>
               </div>
-              <div className='flex flex-col gap-y-4 items-start w-1/2 md:w-auto'>
+              <div className='flex flex-col gap-y-4 items-center md:items-start w-1/2 md:w-auto'>
                 <p className='uppercase text-sm font-semibold text-gray-900'>Help and support</p>
                 <p className='text-base font-normal text-gray-500'>Contact Us</p>
                 <p className='text-base font-normal text-gray-500'>Knowledge Center </p>
                 <p className='text-base font-normal text-gray-500'>Premium Support</p>
                 <p className='text-base font-normal text-gray-500'>Sponsorships</p>
               </div>
-              <div className='flex flex-col gap-y-4 items-start w-1/2 md:w-auto'>
+              <div className='flex flex-col gap-y-4 items-center md:items-start w-1/2 md:w-auto'>
                 <p className='uppercase text-sm font-semibold text-gray-900'>Learning</p>
                 <p className='text-base font-normal text-gray-500'>Learn Hub</p>
                 <p className='text-base font-normal text-gray-500'>Manuals</p>
                 <p className='text-base font-normal text-gray-500'>Tutorials</p>
                 <p className='text-base font-normal text-gray-500'>Communities</p>
               </div>
-              <div className='flex flex-col gap-y-4 items-start w-1/2 md:w-auto'>
+              <div className='flex flex-col gap-y-4 items-center md:items-start w-1/2 md:w-auto'>
                 <p className='uppercase text-sm font-semibold text-gray-900'>RESOURCES</p>
                 <p className='text-base font-normal text-gray-500'>Third-Party Tools</p>
                 <p className='text-base font-normal text-gray-500'>Illustrations</p>
@@ -247,7 +247,7 @@ function App() {
                 <p className='text-base font-normal text-gray-500'>Bluehost</p>
                 <p className='text-base font-normal text-gray-500'>Stock Photos</p>
               </div>
-              <div className='flex flex-col gap-y-4 items-start w-1/2 md:w-auto'>
+              <div className='flex flex-col gap-y-4 items-center md:items-start w-1/2 md:w-auto'>
                 <p className='uppercase text-sm font-semibold text-gray-900'>LEGAL</p>
                 <p className='text-base font-normal text-gray-500'>Privacy Policy</p>
                 <p className='text-base font-normal text-gray-500'>Terms & Conditions</p>
