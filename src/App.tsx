@@ -14,32 +14,46 @@ import svg2 from './assets/people.svg'
 import svg3 from './assets/cart.svg'
 import svg4 from './assets/earth.svg'
 import quote from './assets/quote.svg'
+import git from './assets/github.svg'
+import x from './assets/twitter.svg'
+import dribble from './assets/dribbble.svg'
+import facebook from './assets/facebook-f.svg'
+import burger from './assets/menu.svg'
 import { useState } from 'react'
 
 function App() {
 
   const [state, setState] = useState(true)
+  const [open, setOpen] = useState(false)
 
   return (
     <div>
-      <div className='w-full px-20 max-w-7xl mx-auto'>
+      <div className='px-2 w-full md:px-20 max-w-7xl mx-auto overflow-x-hidden'>
         <div className='flex items-center justify-between py-6'>
-          <div className='flex gap-x-8 items-center'>
+          <div className='flex gap-x-8 items-center relative w-full md:w-auto'>
             <img src={logo}/>
-            <div className='text-base font-medium text-gray-900'>Company</div>
-            <div className='text-base font-medium text-gray-900'>Marketplace</div>
-            <div className='text-base font-medium text-gray-900'>Features</div>
-            <div className='text-base font-medium text-gray-900'>Team</div>
-            <div className='text-base font-medium text-gray-900'>Contact</div>
+            <img src={burger} width={24} height={24} onClick={() => setOpen(!open)} className='ml-auto md:hidden'/>
+            <div className={`flex flex-col md:flex-row absolute md:static gap-y-8 md:gap-y-0 bg-purple-400 md:bg-transparent p-4 md:p-0 gap-x-8 items-center ${open ? '-right-2 -top-6' : '-right-80 -top-6'}`}>
+              <img src={burger} width={24} height={24} onClick={() => setOpen(!open)} className='ml-auto md:hidden'/>
+              <div className='text-base font-medium text-gray-900'>Company</div>
+              <div className='text-base font-medium text-gray-900'>Marketplace</div>
+              <div className='text-base font-medium text-gray-900'>Features</div>
+              <div className='text-base font-medium text-gray-900'>Team</div>
+              <div className='text-base font-medium text-gray-900'>Contact</div>
+              <div className='block md:hidden'>
+                <button type='button' className='text-sm font-medium text-gray-900 mr-4'>Log In</button>
+                <button type='button' className='text-sm font-medium text-white py-2 px-3 bg-purple-600 rounded-lg'>Get started</button>
+              </div>
+            </div>
           </div>
-          <div>
+          <div className='hidden md:block'>
             <button type='button' className='text-sm font-medium text-gray-900 mr-4'>Log In</button>
             <button type='button' className='text-sm font-medium text-white py-2 px-3 bg-purple-600 rounded-lg'>Get started</button>
           </div>
         </div>
-        <div className='py-16 flex items-center gap-x-3'>
+        <div className='flex-col-reverse md:flex-row py-4 md:py-16 flex items-center gap-x-3'>
           <div className='flex flex-col'>
-            <p className='leading-none text-6xl font-black mb-6'>Building digital products & brands.</p>
+            <p className='leading-none text-3xl md:text-6xl font-black mb-6'>Building digital products & brands.</p>
             <p className='text-xl font-normal text-gray-500 mb-10'>Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
             <div className='flex'>
               <button type='button' className='text-sm font-medium text-white px-5 py-3 bg-purple-600 rounded-lg mr-4'>Start 30 day free trial</button>
@@ -50,28 +64,28 @@ function App() {
             <img src={hero} className=''/>
           </div>
         </div>
-        <div className='pb-24 flex justify-between'>
-          <div>
-            <img src={check1}/>
+        <div className='pb-4 gap-4 md:gap-0 flex-wrap md:pb-24 flex justify-between'>
+          <div className='w-[calc(50%-8px)] md:w-auto'>
+            <img src={check1} className='w-full md:w-auto'/>
           </div>
-          <div>
-            <img src={check2}/>
+          <div className='w-[calc(50%-8px)] md:w-auto'>
+            <img src={check2} className='w-full md:w-auto'/>
           </div>
-          <div>
-            <img src={check3}/>
+          <div className='w-[calc(50%-8px)] md:w-auto'>
+            <img src={check3} className='w-full md:w-auto'/>
           </div>
-          <div>
-            <img src={check4}/>
+          <div className='w-[calc(50%-8px)] md:w-auto'>
+            <img src={check4} className='w-full md:w-auto'/>
           </div>
-          <div>
-            <img src={check5}/>
+          <div className='w-[calc(50%-8px)] md:w-auto'>
+            <img src={check5} className='w-full md:w-auto'/>
           </div>
-          <div>
-            <img src={check6}/>
+          <div className='w-[calc(50%-8px)] md:w-auto'>
+            <img src={check6} className='w-full md:w-auto'/>
           </div>
         </div>
-        <div className='py-24 flex flex-col gap-y-20'>
-          <div className='flex items-center gap-x-16'>
+        <div className='py-4 md:py-24 flex flex-col gap-y-4 md:gap-y-20 '>
+          <div className='flex-col md:flex-row flex items-center gap-x-16'>
             <div className='flex flex-col'>
               <p className='leading-tight text-4xl font-extrabold text-gray-900 mb-4'>Work with tools you already use</p>
               <p className='text-xl font-normal text-gray-500 mb-8'>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease.</p>
@@ -84,7 +98,7 @@ function App() {
             </div>
             <div className='shrink-0'><img src={feature}/></div>
           </div>
-          <div className='flex items-center gap-x-16'>
+          <div className='flex-col md:flex-row flex items-center gap-x-16'>
             <div className='shrink-0'><img src={feature2}/></div>
             <div className='flex flex-col'>
               <p className='leading-tight text-4xl font-extrabold text-gray-900 mb-4'>We invest in the world’s potential</p>
@@ -99,7 +113,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className='py-24 flex gap-x-24'>
+        <div className='py-4 flex-col md:flex-row md:py-24 flex gap-x-24'>
           <div className='flex flex-col'>
             <p className='leading-none text-lg font-medium text-purple-600'>Trusted Worldwide</p>
             <p className='leading-tight text-4xl font-extrabold text-gray-900 mb-4 mt-3'>Trusted by over 600 million users and 10,000 teams</p>
@@ -107,7 +121,7 @@ function App() {
             <p className='leading-none text-base font-medium text-purple-600 mb-4 mt-10'>Explore Legality Guide</p>
             <p className='leading-none text-base font-medium text-purple-600'>Visit the Trust Center</p>
           </div>
-          <div className='flex gap-8 flex-wrap'>
+          <div className='flex gap-8 flex-wrap mt-8 md:mt-0'>
             <div className='flex flex-col w-[calc(50%-18px)]'>
               <img src={svg1} width={48} height={48}/>
               <p className='leading-tight text-2xl font-bold mt-4 mb-2 text-gray-900'>99.99% uptime</p>
@@ -130,17 +144,17 @@ function App() {
             </div>
           </div>
         </div>
-        <div className='py-24 flex flex-col gap-y-6 items-center'>
+        <div className='py-4 md:py-24 flex flex-col gap-y-6 items-center'>
           <div>
             <img src={quote}/>
           </div>
-          <p className='leading-relaxed text-2xl font-bold text-gray-900 text-center px-64'>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
+          <p className='px-0 leading-relaxed text-2xl font-bold text-gray-900 text-center md:px-64'>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
           <p className='leading-tight text-base font-semibold text-gray-900'>Micheal Gough  / <span className='text-sm font-normal text-gray-500'>CEO at Google</span></p>
         </div>
-        <div className='py-24 flex flex-col items-center'>
+        <div className='py-4 md:py-24 flex flex-col items-center'>
           <p className='leading-tight text-4xl font-extrabold'>Pay as you grow</p>
-          <p className='text-xl font-normal text-gray-500 text-center px-64'>Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
-          <div className='flex gap-x-10 mt-12'>
+          <p className='px-0text-xl font-normal text-gray-500 text-center md:px-64'>Here at flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+          <div className='flex-col md:flex-row flex gap-x-10 mt-12'>
             <div className='p-8 flex flex-col items-center w-full'>
               <p className='text-2xl font-semibold text-gray-900'>Starter</p>
               <p className='text-lg font-normal text-gray-500 mt-4 mb-8 text-center'>Great for personal use and for your side projects.</p>
@@ -182,9 +196,9 @@ function App() {
             </div>
           </div>
         </div>
-        <div className='pb-24 flex flex-col items-center'>
-          <p className='leading-tight text-4xl font-extrabold text-gray-900 pb-8'>Frequently asked questions</p>
-          <div className='mx-72'>
+        <div className='pb-4 md:pb-24 flex flex-col items-center'>
+          <p className='leading-tight text-4xl font-extrabold text-gray-900 md:pb-8'>Frequently asked questions</p>
+          <div className='md:mx-72'>
             <div>
               <p className='leading-none text-lg font-medium text-gray-900 py-6' onClick={() => setState(!state)}>Can I use FlowBite in open-source projects?</p>
               <div className={`h-0 text-gray-500 text-base font-normal transition-all overflow-hidden ${state ? 'h-fit' : ''}`}>
@@ -195,10 +209,72 @@ function App() {
             </div>
           </div>
         </div>
-        <div className='py-24 flex flex-col items-center'>
+        <div className='py-4 md:py-24 flex flex-col items-center'>
           <p className='leading-tight text-4xl font-extrabold text-gray-900 mb-6'>Start your free trial today</p>
           <p className='text-xl font-normal text-gray-500 mb-6'>Try Flowbite Platform for 30 days. No credit card required.</p>
           <button className='py-3 px-5 bg-purple-600 rounded-lg text-base font-medium text-white'>Free trial for 30 days</button>
+        </div>
+        <div className='py-16'>
+          <div className='flex flex-col gap-y-16 items-center'>
+            <div className='flex-row flex flex-wrap md:flex-nowrap gap-y-8 md:gap-y-0 justify-between w-full'>
+              <div className='flex flex-col gap-y-4 items-start w-1/2 md:w-auto'>
+                <p className='uppercase text-sm font-semibold text-gray-900'>COMPANY</p>
+                <p className='text-base font-normal text-gray-500'>About</p>
+                <p className='text-base font-normal text-gray-500'>Premium</p>
+                <p className='text-base font-normal text-gray-500'>Blog</p>
+                <p className='text-base font-normal text-gray-500'>Affiliate Program</p>
+                <p className='text-base font-normal text-gray-500'>Get Coupon</p>
+              </div>
+              <div className='flex flex-col gap-y-4 items-start w-1/2 md:w-auto'>
+                <p className='uppercase text-sm font-semibold text-gray-900'>Help and support</p>
+                <p className='text-base font-normal text-gray-500'>Contact Us</p>
+                <p className='text-base font-normal text-gray-500'>Knowledge Center </p>
+                <p className='text-base font-normal text-gray-500'>Premium Support</p>
+                <p className='text-base font-normal text-gray-500'>Sponsorships</p>
+              </div>
+              <div className='flex flex-col gap-y-4 items-start w-1/2 md:w-auto'>
+                <p className='uppercase text-sm font-semibold text-gray-900'>Learning</p>
+                <p className='text-base font-normal text-gray-500'>Learn Hub</p>
+                <p className='text-base font-normal text-gray-500'>Manuals</p>
+                <p className='text-base font-normal text-gray-500'>Tutorials</p>
+                <p className='text-base font-normal text-gray-500'>Communities</p>
+              </div>
+              <div className='flex flex-col gap-y-4 items-start w-1/2 md:w-auto'>
+                <p className='uppercase text-sm font-semibold text-gray-900'>RESOURCES</p>
+                <p className='text-base font-normal text-gray-500'>Third-Party Tools</p>
+                <p className='text-base font-normal text-gray-500'>Illustrations</p>
+                <p className='text-base font-normal text-gray-500'>Themesberg</p>
+                <p className='text-base font-normal text-gray-500'>Bluehost</p>
+                <p className='text-base font-normal text-gray-500'>Stock Photos</p>
+              </div>
+              <div className='flex flex-col gap-y-4 items-start w-1/2 md:w-auto'>
+                <p className='uppercase text-sm font-semibold text-gray-900'>LEGAL</p>
+                <p className='text-base font-normal text-gray-500'>Privacy Policy</p>
+                <p className='text-base font-normal text-gray-500'>Terms & Conditions</p>
+                <p className='text-base font-normal text-gray-500'>EULA</p>
+              </div>
+            </div>
+            <div className='flex flex-col gap-y-5 items-center'>
+              <div>
+                <img src={logo}/>
+              </div>
+              <p className='my-0 text-base font-normal text-gray-500 text-center'>© 2022 Flowbite, Inc. All rights reserved.</p>
+              <div className='flex gap-x-5'>
+                <div>
+                  <img src={git}/>
+                </div>
+                <div>
+                  <img src={x}/>
+                </div>
+                <div>
+                  <img src={dribble}/>
+                </div>
+                <div>
+                  <img src={facebook}/>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
